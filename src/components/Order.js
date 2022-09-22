@@ -1,6 +1,7 @@
+import './Orders.css';
 
 export default function Order(props) {
-    const {values, change, submit} = props;
+    const {values, change, submit, errors} = props;
 
     return(
         <section>
@@ -10,7 +11,9 @@ export default function Order(props) {
             </div>
             <form id='pizza-form' onSubmit={submit}>
                 <h2>Build Your Own Pizza</h2>
+                {/* <p className='errors'>{errors.name}</p> */}
                 <div>
+                    <p className='errors'>{errors.name}</p>
                     <label>Name:{' '}
                         <input
                             id='name-input'
@@ -22,6 +25,7 @@ export default function Order(props) {
                     </label>
                 </div>
                 <div>
+                    <p className='errors'>{errors.size}</p>
                     <label>Choice of Size
                         <p>Required</p>
                         <select 
@@ -38,6 +42,7 @@ export default function Order(props) {
                     </label>
                 </div>
                 <div>
+                    <p className='errors'>{errors.sauce}</p>
                     <label>
                         <input
                             type='radio'
@@ -72,6 +77,7 @@ export default function Order(props) {
                     </label>
                 </div>
                 <div>
+                    <p className='errors'>fix this!</p>
                     <label>
                         <input 
                             type='checkbox'
@@ -186,6 +192,7 @@ export default function Order(props) {
                     </label>
                 </div>
                 <div>
+                    <p className='errors'>{errors.comments}</p>
                     <label>
                         <input
                             id='special-text'

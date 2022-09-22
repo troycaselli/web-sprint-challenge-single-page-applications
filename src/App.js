@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import {Link, Switch, Route} from 'react-router-dom';
+import * as yup from 'yup';
 import Home from './components/Home';
 import Order from './components/Order';
 import Confirmation from './components/Confirmation';
+import formSchema from './validation/formSchema';
 
 const initialFormData = {
   name: '',
@@ -50,16 +52,25 @@ const App = () => {
   const [personalizedPizza, setPersonalizedPizza] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialErrorData);
 
+  const validate = (name, valueToUse) => {
+    yup.reach(formSchema, name)
+      .validate(valueToUse)
+      .then(() => setFormErrors({...formErrors, [name]: ''}))
+      .catch(err => setFormErrors({...formErrors, [name]:err.errors[0]}))
+  }
+
   const onChange = event => {
     const {name, value, checked, type} = event.target;
     console.log(checked);
     const valueToUse = type === 'checkbox' ? checked : value;
     setPersonalizedPizza({...personalizedPizza, [name]: valueToUse});
+    validate(name, valueToUse);
   }
   console.log(personalizedPizza);
   
   const onSubmit = evt => {
     evt.preventDefault();
+
   }
 
   return (
@@ -82,7 +93,8 @@ const App = () => {
             <Order
               values={personalizedPizza}
               change={onChange}
-              submit={onSubmit}/>
+              submit={onSubmit}
+              errors={formErrors}/>
           </Route>
           <Route path='/' component={Home}/>
         </Switch>
