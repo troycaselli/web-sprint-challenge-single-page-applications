@@ -1,94 +1,202 @@
 
-export default function Order() {
+export default function Order(props) {
+    const {values, change, submit} = props;
+
     return(
         <section>
             <div>
                 <h3>Build Your Own Pizza</h3>
                 <img src='../../Assets/Pizza.jpg' alt='pizza'/>
             </div>
-            <form id='pizza-form'>
+            <form id='pizza-form' onSubmit={submit}>
                 <h2>Build Your Own Pizza</h2>
                 <div>
                     <label>Name:{' '}
-                        <input id='name-input' type='text'/>
+                        <input
+                            id='name-input'
+                            type='text'
+                            name='name'
+                            value={values.name}
+                            onChange={change}
+                            />
                     </label>
                 </div>
                 <div>
                     <label>Choice of Size
                         <p>Required</p>
-                        <select id='size-dropdown'>
+                        <select 
+                            id='size-dropdown'
+                            name='size'
+                            value={values.size}
+                            onChange={change}>
                             <option value=''>-Select-</option>
-                            <option value='1'>6"</option>
-                            <option value='2'>12"</option>
-                            <option value='3'>16"</option>
-                            <option value='4'>20"</option>
+                            <option value='6"'>6"</option>
+                            <option value='12"'>12"</option>
+                            <option value='16"'>16"</option>
+                            <option value='20"'>20"</option>
                         </select>
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type='radio' name='sauce'/>Original Red
+                        <input
+                            type='radio'
+                            name='sauce'
+                            value='Original Red'
+                            onChange={change}
+                            />Original Red
                     </label>
                     <label>
-                        <input type='radio' name='sauce'/>Garlic Ranch
+                        <input
+                            type='radio'
+                            name='sauce'
+                            value='Garlic Ranch'
+                            onChange={change}
+                            />Garlic Ranch
                     </label>
                     <label>
-                        <input type='radio' name='sauce'/>BBQ Sause
+                        <input
+                            type='radio'
+                            name='sauce'
+                            value='BBQ Sauce'
+                            onChange={change}
+                            />BBQ Sauce
                     </label>
                     <label>
-                        <input type='radio' name='sauce'/>Spinach Alfredo
+                        <input
+                            type='radio'
+                            name='sauce'
+                            value="Spinach Alfredo"
+                            onChange={change}
+                            />Spinach Alfredo
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type='checkbox'/>Pepperoni
+                        <input 
+                            type='checkbox'
+                            name='pepperoni'
+                            checked={values.pepperoni}
+                            onChange={change}
+                            />Pepperoni
                     </label>
                     <label>
-                        <input type='checkbox'/>Sausage
+                        <input
+                            type='checkbox'
+                            name='sausage'
+                            checked={values.sausage}
+                            onChange={change}
+                            />Sausage
                     </label>
                     <label>
-                        <input type='checkbox'/>Canadian Bacon
+                        <input
+                            type='checkbox'
+                            name='canadianBacon'
+                            checked={values.canadianBacon}
+                            onChange={change}
+                            />Canadian Bacon
                     </label>
                     <label>
-                        <input type='checkbox'/>Spicy Italian Sausage
+                        <input
+                            type='checkbox'
+                            name='spicyItalianSausage'
+                            checked={values.spicyItalianSausage}
+                            onChange={change}
+                            />Spicy Italian Sausage
                     </label>
                     <label>
-                        <input type='checkbox'/>Grilled Chicken
+                        <input
+                            type='checkbox'
+                            name='grilledChicken'
+                            checked={values.grilledChicken}
+                            onChange={change}
+                            />Grilled Chicken
                     </label>
                     <label>
-                        <input type='checkbox'/>Onions
+                        <input
+                            type='checkbox'
+                            name='onions'
+                            checked={values.onions}
+                            onChange={change}
+                            />Onions
                     </label>
                     <label>
-                        <input type='checkbox'/>Green Pepper
+                        <input
+                            type='checkbox'
+                            name='greenPepper'
+                            checked={values.greenPepper}
+                            onChange={change}
+                            />Green Pepper
                     </label>
                     <label>
-                        <input type='checkbox'/>Dried Tomatos
+                        <input
+                            type='checkbox'
+                            name='driedTomatos'
+                            checked={values.driedTomatos}
+                            onChange={change}
+                            />Dried Tomatos
                     </label>
                     <label>
-                        <input type='checkbox'/>Black Olives
+                        <input
+                            type='checkbox'
+                            name='blackOlives'
+                            checked={values.blackOlives}
+                            onChange={change}
+                            />Black Olives
                     </label>
                     <label>
-                        <input type='checkbox'/>Roasted Garlic
+                        <input
+                            type='checkbox'
+                            name='roastedGarlic'
+                            checked={values.roastedGarlic}
+                            onChange={change}
+                            />Roasted Garlic
                     </label>
                     <label>
-                        <input type='checkbox'/>Artichoke Hearts
+                        <input
+                            type='checkbox'
+                            name='artichokeHearts'
+                            checked={values.artichokeHearts}
+                            onChange={change}
+                            />Artichoke Hearts
                     </label>
                     <label>
-                        <input type='checkbox'/>Gummy Bears
+                        <input
+                            type='checkbox'
+                            name='gummyBears'
+                            checked={values.gummyBears}
+                            onChange={change}
+                            />Gummy Bears
                     </label>
                     <label>
-                        <input type='checkbox'/>Pineapple
+                        <input
+                            type='checkbox'
+                            name='pineapple'
+                            checked={values.pineapple}
+                            onChange={change}
+                            />Pineapple
                     </label>
                     <label>
-                        <input type='checkbox'/>Extra Cheese
+                        <input
+                            type='checkbox'
+                            name='extraCheese'
+                            checked={values.extraCheese}
+                            onChange={change}
+                            />Extra Cheese
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input id='special-text' type='text' placeholder="Anything else you'd like to add?"></input>
+                        <input
+                            id='special-text'
+                            type='text'
+                            placeholder="Anything else you'd like to add?"
+                            name='comments'
+                            value={values.comments}
+                            onChange={change}></input>
                     </label>
                 </div>
-                <button id='order-button'>Add to Order</button>
+                <button type='submit' id='order-button'>Add to Order</button>
             </form>
         </section>
     )
