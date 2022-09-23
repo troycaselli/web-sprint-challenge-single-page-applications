@@ -1,3 +1,48 @@
+.order-page {
+    display: flex;
+    justify-content: center;
+}
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box {
+    width: 60%;
+    margin-top: 5%;
+    border-bottom: 1px solid #1B1212;
+}
+.order-page h2 {
+    margin: 0;
+    padding: 3% 0;
+    font-size: 1.5rem;
+}
+#pizza-form {
+    padding: 10px;
+    font-size: 1rem;
+}
+#pizza-form h3 {
+    font-size: 1rem;
+}
+.grey {
+    background: rgb(227, 225, 225);
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+}
+.basic {
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+}
 .errors {
     color: red;
+    margin: 0;
+    padding-top: 1%;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+.title-margin {
+    margin: 0 0 2% 0;
 }
