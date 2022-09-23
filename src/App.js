@@ -71,7 +71,8 @@ const App = () => {
     evt.preventDefault();
     axios.post('https://reqres.in/api/orders', personalizedPizza)
       .then(res => {
-        console.log(res.data); // not logging?
+        console.log(res.data);
+        setPersonalizedPizza(initialFormData);
       })
       .catch(err => console.error(err));
 

@@ -47,6 +47,7 @@ export default function Order(props) {
                             type='radio'
                             name='sauce'
                             value='Original Red'
+                            checked={values.sauce === 'Original Red'}
                             onChange={change}
                             />Original Red
                     </label>
@@ -55,6 +56,7 @@ export default function Order(props) {
                             type='radio'
                             name='sauce'
                             value='Garlic Ranch'
+                            checked={values.sauce === 'Garlic Ranch'}
                             onChange={change}
                             />Garlic Ranch
                     </label>
@@ -63,6 +65,7 @@ export default function Order(props) {
                             type='radio'
                             name='sauce'
                             value='BBQ Sauce'
+                            checked={values.sauce === 'BBQ Sauce'}
                             onChange={change}
                             />BBQ Sauce
                     </label>
@@ -71,12 +74,12 @@ export default function Order(props) {
                             type='radio'
                             name='sauce'
                             value="Spinach Alfredo"
+                            checked={values.sauce === 'Spinach Alfredo'}
                             onChange={change}
                             />Spinach Alfredo
                     </label>
                 </div>
                 <div>
-                    <p className='errors'>fix this!</p>
                     <label>
                         <input 
                             type='checkbox'

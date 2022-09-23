@@ -14,8 +14,17 @@ const formSchema = yup.object().shape({
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     canadianBacon: yup.boolean(),
-    // TOPPINGS... something like: yup.array(yup.boolean()).compact().min(1).max(3)
-    // should include each topping separately
+    spicyItalianSausage: yup.boolean(),
+    grilledChicken: yup.boolean(),
+    onions: yup.boolean(),
+    greenPepper: yup.boolean(),
+    driedTomatos: yup.boolean(),
+    blackOlives: yup.boolean(),
+    roastedGarlic: yup.boolean(),
+    artichokeHearts: yup.boolean(),
+    gummyBears: yup.boolean(),
+    pineapple: yup.boolean(),
+    extraCheese: yup.boolean(),
     comments: yup
         .string()
         .max(50, 'maximum of 50 characters allowed')
