@@ -9,7 +9,7 @@ export default function Order(props) {
             <div className='box'>
                 <div className='heading'>
                     <h2>Build Your Own Pizza</h2>
-                    <img src='../../Assets/Pizza.jpg' alt='pizza'/>
+                    <img src='../Assets/Pizza.jpg' alt='pizza'/>
                     <img src='pizza.jpg' alt='pizza'/>
                 </div>
                 <form id='pizza-form' onSubmit={submit}>
@@ -197,7 +197,7 @@ export default function Order(props) {
                                 />Extra Cheese
                         </label>
                     </div>
-                    <div className='basic'>
+                    <div className='grey'>
                         {/* <label>
                             <input
                                 id='special-text'
@@ -216,11 +216,16 @@ export default function Order(props) {
                             onChange={change}></textarea>
                         <p className='errors'>{errors.comments}</p>
                     </div>
-                    <button 
-                        type='submit'
-                        id='order-button'
-                        disabled={disabled}
-                    >Add to Order</button>
+                    <div className='line-container'>
+                        <div className='line'></div>
+                    </div>
+                    <div className='button-container'>
+                        <button
+                            type='submit'
+                            id='order-button'
+                            disabled={disabled}
+                        >Add to Order</button>
+                    </div>
                 </form>
             </div>
         </section>
