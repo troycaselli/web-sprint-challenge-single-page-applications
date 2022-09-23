@@ -119,24 +119,24 @@ describe("Pizza test, sprint 3 challenge", () => {
     expect(sizeDropdown).toBeInTheDocument()
   });
 
-  // it('Form has toppings checklist with at least 4 options, Review how to control forms using form inputs such as checklist.', () => {
-  //   let testLocation
-  //   render(
-  //     <MemoryRouter initialEntries={['/pizza']}>
-  //       <App />
-  //       <Route
-  //       path="*"
-  //       render={({ location }) => {
-  //         testLocation = location;
-  //         return null;
-  //       }}
-  //       />
-  //     </MemoryRouter>
-  //   );
-  //   expect(testLocation.pathname).toBe('/pizza')
-  //   const toppingsChecklist = document.querySelectorAll('[type="checkbox"]')
-  //   expect(toppingsChecklist.length).toBeGreaterThanOrEqual(4)
-  // });
+  it('Form has toppings checklist with at least 4 options, Review how to control forms using form inputs such as checklist.', () => {
+    let testLocation
+    render(
+      <MemoryRouter initialEntries={['/pizza']}>
+        <App />
+        <Route
+        path="*"
+        render={({ location }) => {
+          testLocation = location;
+          return null;
+        }}
+        />
+      </MemoryRouter>
+    );
+    expect(testLocation.pathname).toBe('/pizza')
+    const toppingsChecklist = document.querySelectorAll('[type="checkbox"]')
+    expect(toppingsChecklist.length).toBeGreaterThanOrEqual(4)
+  });
 
   it('Form has special instructions input with #special-text, Review how to capture and handle input values using onChange.', () => {
     let testLocation

@@ -12,6 +12,7 @@ const formSchema = yup.object().shape({
         .string()
         .oneOf(['Original Red', 'Garlic Ranch', 'BBQ Sauce', 'Spinach Alfredo'], 'You must choose a sauce'),
     // TOPPINGS... something like: yup.array(yup.boolean()).compact().min(1).max(3)
+    // should include each topping separately
     comments: yup
         .string()
         .max(50, 'maximum of 50 characters allowed')
