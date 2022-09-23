@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Link, Switch, Route} from 'react-router-dom';
+import {Link, Switch, Route, useHistory} from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
 import Home from './components/Home';
@@ -49,10 +49,14 @@ const initialErrorData = {
   comments: ''
 }
 
+let pizzaOrdered = {};
+
 const App = () => {
   const [personalizedPizza, setPersonalizedPizza] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialErrorData);
   const [disabled, setDisabled] = useState(true);
+
+  const history = useHistory();
 
   const validate = (name, valueToUse) => {
     yup.reach(formSchema, name)
@@ -73,7 +77,9 @@ const App = () => {
     axios.post('https://reqres.in/api/orders', personalizedPizza)
       .then(res => {
         console.log(res.data);
+        pizzaOrdered = res.data;
         setPersonalizedPizza(initialFormData);
+        history.push('/pizza/confirmation');
       })
       .catch(err => console.error(err));
   }
@@ -98,7 +104,7 @@ const App = () => {
       <section>
         <Switch>
           <Route path='/pizza/confirmation'>
-            <Confirmation />
+            <Confirmation order={pizzaOrdered}/>
           </Route>
           <Route path='/pizza'>
             <Order
