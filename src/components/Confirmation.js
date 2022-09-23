@@ -1,3 +1,4 @@
+import './Confirmation.css';
 
 export default function Confirmation(props) {
     const {order} = props;
@@ -5,7 +6,7 @@ export default function Confirmation(props) {
     return(
         <div>
             <div>
-                <h1>Your Order is Confirmed!</h1>
+                <h1 id='ordered-title'>Your Order is Confirmed!</h1>
                 <h3>Your pizza is on its way!</h3>
             </div>
             <div>
@@ -17,7 +18,7 @@ export default function Confirmation(props) {
                 <ol>Toppings:{' '}
                     {order.pepperoni ? (<li>pepperoni</li>): ''}
                     {order.sausage ? (<li>sausage</li>): ''}
-                    {order.canadianBacon ? (<li>canadianbacon</li>) : ''}
+                    {order.canadianBacon ? (<li>canadian bacon</li>) : ''}
                     {order.spicyItalianSausage ? (<li>spicy italian sausage</li>) : ''}
                     {order.grilledChicken ? (<li>grilled chicken</li>) : ''}
                     {order.onions ? (<li>onions</li>) : ''}

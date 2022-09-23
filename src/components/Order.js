@@ -7,7 +7,6 @@ export default function Order(props) {
     return(
         <section>
             <div>
-                <h3>Build Your Own Pizza</h3>
                 <img src='../../Assets/Pizza.jpg' alt='pizza'/>
             </div>
             <form id='pizza-form' onSubmit={submit}>

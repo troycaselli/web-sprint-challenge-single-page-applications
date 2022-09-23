@@ -2,11 +2,56 @@ import React, {useState, useEffect} from "react";
 import {Link, Switch, Route, useHistory} from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
+import styled from 'styled-components';
 import Home from './components/Home';
 import Order from './components/Order';
 import Confirmation from './components/Confirmation';
 import formSchema from './validation/formSchema';
+import './App.css';
 
+// styling
+const Header = styled.header`
+  background: #1B1212;
+  color: #F4F3F2;
+  height: 8vh;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5%;
+`;
+const NavDiv = styled.div`
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const H3 = styled.h3`
+  font-size: 1.3rem;
+`;
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: '#F4F3F2',
+  fontSize: '1rem',
+  hover: {
+    color: '#D31D1D'
+  }
+}
+
+const Section = styled.section`
+  min-height: 86vh;
+`;
+
+const Footer = styled.footer`
+  background: #1B1212;
+  height: 6vh;
+  margin-top: auto;
+`;
+
+// initial data
 const initialFormData = {
   name: '',
   size: '',
@@ -51,6 +96,7 @@ const initialErrorData = {
 
 let pizzaOrdered = {};
 
+// App component
 const App = () => {
   const [personalizedPizza, setPersonalizedPizza] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialErrorData);
@@ -92,16 +138,16 @@ const App = () => {
 
   return (
     <div>
-      <header>
-        <nav>
-          <h3>BLOOMTECH EATS</h3>
-          <div>
-            <Link to='/'>Home</Link>
-            <Link to='/pizza'>Order</Link>
-          </div>
-        </nav>
-      </header>
-      <section>
+      <Header>
+        <Nav>
+          <H3>BLOOMTECH EATS</H3>
+          <NavDiv>
+            <Link to='/' style={linkStyle}>Home</Link>
+            <Link to='/pizza' style={linkStyle}>Order</Link>
+          </NavDiv>
+        </Nav>
+      </Header>
+      <Section>
         <Switch>
           <Route path='/pizza/confirmation'>
             <Confirmation order={pizzaOrdered}/>
@@ -116,7 +162,8 @@ const App = () => {
           </Route>
           <Route path='/' component={Home}/>
         </Switch>
-      </section>
+      </Section>
+      <Footer></Footer>
     </div>
   );
 };
