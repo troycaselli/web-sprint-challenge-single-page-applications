@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link, Switch, Route} from 'react-router-dom';
 import * as yup from 'yup';
+import axios from 'axios';
 import Home from './components/Home';
 import Order from './components/Order';
 import Confirmation from './components/Confirmation';
@@ -61,15 +62,18 @@ const App = () => {
 
   const onChange = event => {
     const {name, value, checked, type} = event.target;
-    console.log(checked);
     const valueToUse = type === 'checkbox' ? checked : value;
     setPersonalizedPizza({...personalizedPizza, [name]: valueToUse});
     validate(name, valueToUse);
   }
-  console.log(personalizedPizza);
   
   const onSubmit = evt => {
     evt.preventDefault();
+    axios.post('https://reqres.in/api/orders', personalizedPizza)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.error(err));
 
   }
 

@@ -11,7 +11,6 @@ export default function Order(props) {
             </div>
             <form id='pizza-form' onSubmit={submit}>
                 <h2>Build Your Own Pizza</h2>
-                {/* <p className='errors'>{errors.name}</p> */}
                 <div>
                     <p className='errors'>{errors.name}</p>
                     <label>Name:{' '}
