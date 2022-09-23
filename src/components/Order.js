@@ -1,7 +1,7 @@
 import './Orders.css';
 
 export default function Order(props) {
-    const {values, change, submit, errors} = props;
+    const {values, change, submit, errors, disabled} = props;
 
     return(
         <section>
@@ -205,7 +205,11 @@ export default function Order(props) {
                             onChange={change}></input>
                     </label>
                 </div>
-                <button type='submit' id='order-button'>Add to Order</button>
+                <button 
+                    type='submit'
+                    id='order-button'
+                    disabled={disabled}
+                    >Add to Order</button>
             </form>
         </section>
     )

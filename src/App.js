@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link, Switch, Route} from 'react-router-dom';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -52,6 +52,7 @@ const initialErrorData = {
 const App = () => {
   const [personalizedPizza, setPersonalizedPizza] = useState(initialFormData);
   const [formErrors, setFormErrors] = useState(initialErrorData);
+  const [disabled, setDisabled] = useState(true);
 
   const validate = (name, valueToUse) => {
     yup.reach(formSchema, name)
@@ -75,8 +76,13 @@ const App = () => {
         setPersonalizedPizza(initialFormData);
       })
       .catch(err => console.error(err));
-
   }
+
+  useEffect(() => {
+    formSchema
+      .isValid(personalizedPizza)
+      .then(valid => setDisabled(!valid))
+  }, [personalizedPizza]);
 
   return (
     <div>
@@ -99,7 +105,8 @@ const App = () => {
               values={personalizedPizza}
               change={onChange}
               submit={onSubmit}
-              errors={formErrors}/>
+              errors={formErrors}
+              disabled={disabled}/>
           </Route>
           <Route path='/' component={Home}/>
         </Switch>
