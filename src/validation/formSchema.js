@@ -27,7 +27,7 @@ const formSchema = yup.object().shape({
     extraCheese: yup.boolean(),
     comments: yup
         .string()
-        .max(50, 'maximum of 50 characters allowed')
+        .max(100, 'maximum of 100 characters allowed')
 })
 
 export default formSchema;

@@ -9,7 +9,7 @@ export default function Order(props) {
             <div className='box'>
                 <div className='heading'>
                     <h2>Build Your Own Pizza</h2>
-                    <img src='../Assets/Pizza.jpg' alt='pizza'/>
+                    <img src='../../Assets/Pizza.jpg' alt='pizza'/>
                     <img src='pizza.jpg' alt='pizza'/>
                 </div>
                 <form id='pizza-form' onSubmit={submit}>
