@@ -13,7 +13,9 @@ import './App.css';
 const Header = styled.header`
   background: #1B1212;
   color: #F4F3F2;
-  height: 8vh;
+  height: 70px;
+  display: flex;
+  align-items: center;
 `;
 
 const Nav = styled.nav`
@@ -21,6 +23,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   margin: 0 5%;
+  width: 100%;
 `;
 const NavDiv = styled.div`
   width: 20%;
@@ -47,7 +50,7 @@ const Section = styled.section`
 
 const Footer = styled.footer`
   background: #1B1212;
-  height: 6vh;
+  height: 70px;
   margin-top: auto;
 `;
 

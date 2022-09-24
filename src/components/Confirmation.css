@@ -1,3 +1,44 @@
-#ordered-title {
-    margin: 0;
+.order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+#confirmation-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #F4F3F2;
+    font-size: 1.5rem;
+    /* Photo by <a href="https://unsplash.com/@rowanfreeman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rowan Freeman</a> on <a href="https://unsplash.com/s/photos/moped?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+    background-image: url('../../Assets/Moped.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    width: 100%;
+}
+#confirmation-header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1%;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+#confirmation-header h1 span {
+    font-size: 1.2rem;
+}
+#order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 30%;
+    font-size: 1rem;
+    margin: 3% 0;
+}
+
+#order-container h4,
+#order-container p, 
+#order-container ol {
+    margin: 1% 0;
+}
+
+

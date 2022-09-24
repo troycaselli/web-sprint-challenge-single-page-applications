@@ -4,18 +4,18 @@ export default function Confirmation(props) {
     const {order} = props;
 
     return(
-        <div>
-            <div>
-                <h1 id='ordered-title'>Your Order is Confirmed!</h1>
-                <h3>Your pizza is on its way!</h3>
+        <div className='order-container'>
+            <div id='confirmation-header'>
+                <h1>Order Confirmed!<br /><span>Your pizza is on its way</span></h1>
             </div>
-            <div>
+            <div id='order-container'>
                 <h4>Order Details:</h4>
-                <p>ID #: {order.id}</p>
                 <p>Name: {order.name}</p>
+                <p>ID #: {order.id}</p>
                 <p>Size: {order.size}</p>
                 <p>Sauce: {order.sauce}</p>
-                <ol>Toppings:{' '}
+                <p>Toppings:{' '}</p>
+                <ol>
                     {order.pepperoni ? (<li>pepperoni</li>): ''}
                     {order.sausage ? (<li>sausage</li>): ''}
                     {order.canadianBacon ? (<li>canadian bacon</li>) : ''}
@@ -31,6 +31,7 @@ export default function Confirmation(props) {
                     {order.pineapple ? (<li>pineapple</li>) : ''}
                     {order.extraCheese ? (<li>extra cheese</li>) : ''}
                 </ol>
+                <p>Special Requests: {order.comments}</p>
             </div>
         </div>
     )
