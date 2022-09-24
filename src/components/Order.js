@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import './Orders.css';
+import pizza from '../Assets/Pizza.jpg';
 
 export default function Order(props) {
     const {values, change, submit, errors, disabled} = props;
@@ -9,8 +10,7 @@ export default function Order(props) {
             <div className='box'>
                 <div className='heading'>
                     <h2>Build Your Own Pizza</h2>
-                    <img src='../../Assets/Pizza.jpg' alt='pizza'/>
-                    <img src='pizza.jpg' alt='pizza'/>
+                    <img src={pizza} alt='pizza'/>
                 </div>
                 <form id='pizza-form' onSubmit={submit}>
                     <h3>Build Your Own Pizza</h3>
@@ -198,15 +198,6 @@ export default function Order(props) {
                         </label>
                     </div>
                     <div className='grey'>
-                        {/* <label>
-                            <input
-                                id='special-text'
-                                type='text'
-                                placeholder="Anything else you'd like to add?"
-                                name='comments'
-                                value={values.comments}
-                                onChange={change}></input>
-                        </label> */}
                         <textarea
                             name="comments"
                             id='special-text'

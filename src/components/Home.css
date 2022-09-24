@@ -1,6 +1,6 @@
 .home-container {
     /* Photo by <a href="https://unsplash.com/@v_uk_europe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vitalii Chernopyskyi</a> on <a href="https://unsplash.com/s/photos/pizza?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
-    background-image: url('pizza.jpg');
+    background-image: url('../Assets/Pizza2.jpg');
     background-size: cover;
     height: 40vh;
     display: flex;

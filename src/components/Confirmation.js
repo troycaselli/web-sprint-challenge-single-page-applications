@@ -12,13 +12,13 @@ export default function Confirmation(props) {
                 <h4>Order Details:</h4>
                 <div className='order-divider'>
                     <div id='order-name'>
-                        <p>Name: {order.name}</p>
-                        <p>ID #: {order.id}</p>
+                        <p><span>Name: </span>{order.name}</p>
+                        <p><span>ID#: </span>{order.id}</p>
                     </div>
                     <div id='order-specs'>
-                        <p>Size: {order.size}</p>
-                        <p>Sauce: {order.sauce}</p>
-                        <p>Toppings:{' '}</p>
+                        <p><span>Size: </span>{order.size}</p>
+                        <p><span>Sauce: </span>{order.sauce}</p>
+                        <p><span>Toppings:</span></p>
                         <ol>
                             {order.pepperoni ? (<li>pepperoni</li>): ''}
                             {order.sausage ? (<li>sausage</li>): ''}
@@ -35,7 +35,7 @@ export default function Confirmation(props) {
                             {order.pineapple ? (<li>pineapple</li>) : ''}
                             {order.extraCheese ? (<li>extra cheese</li>) : ''}
                         </ol>
-                        <p id='requests'>Special Requests:<br />{order.comments}</p>
+                        <p id='requests'><span>Special Requests:</span><br />{order.comments}</p>
                     </div>
                 </div>
             </div>

@@ -2,15 +2,19 @@
     display: flex;
     justify-content: center;
 }
+.box {
+    width: 60%;
+    margin: 5% 0;
+    border: 1px solid rgb(227, 225, 225);
+}
 .heading {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.box {
-    width: 60%;
-    margin-top: 5%;
+.heading img {
+    width: 100%;
 }
 .order-page h2 {
     margin: 0;
@@ -18,10 +22,10 @@
     font-size: 1.5rem;
 }
 #pizza-form {
-    padding: 10px;
     font-size: 1rem;
 }
 #pizza-form h3 {
+    padding-left: 10px;
     font-size: 1rem;
 }
 .grey {

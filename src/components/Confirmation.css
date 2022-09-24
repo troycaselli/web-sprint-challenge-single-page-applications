@@ -7,10 +7,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #F4F3F2;
     font-size: 1.5rem;
     /* Photo by <a href="https://unsplash.com/@rowanfreeman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rowan Freeman</a> on <a href="https://unsplash.com/s/photos/moped?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
-    background-image: url('../../Assets/Moped.jpg');
+    background-image: url('../Assets/Moped.jpg');
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -22,6 +23,7 @@
     padding: 1%;
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    width: 50%;
 }
 #confirmation-header h1 span {
     font-size: 1.2rem;
@@ -41,10 +43,14 @@
 #order-container h4 {
     text-align: center;
     margin: 2% 0;
+    font-size: 1.2rem;
 }
 .order-divider {
     display: flex;
     justify-content: center;
+}
+.order-divider span {
+    font-weight: bold;
 }
 #order-name {
     width: 50%;
@@ -59,7 +65,7 @@
     margin: 0 5%;
 }
 #requests {
-    width: 200px;
+    width: 300px;
     word-wrap: break-word;
 }
 
